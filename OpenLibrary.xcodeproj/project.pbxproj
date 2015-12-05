@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2D185D1C131BC3005B5520 /* ControladorInterfazBusqueda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D185C1C131BC3005B5520 /* ControladorInterfazBusqueda.swift */; };
 		0DC06F681C1303AD0013C7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC06F671C1303AD0013C7DF /* AppDelegate.swift */; };
 		0DC06F6B1C1303AD0013C7DF /* OpenLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DC06F691C1303AD0013C7DF /* OpenLibrary.xcdatamodeld */; };
 		0DC06F6D1C1303AD0013C7DF /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC06F6C1C1303AD0013C7DF /* MasterViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2D185C1C131BC3005B5520 /* ControladorInterfazBusqueda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControladorInterfazBusqueda.swift; sourceTree = "<group>"; };
 		0DC06F641C1303AD0013C7DF /* OpenLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC06F671C1303AD0013C7DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC06F6A1C1303AD0013C7DF /* OpenLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenLibrary.xcdatamodel; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				0DC06F671C1303AD0013C7DF /* AppDelegate.swift */,
 				0DC06F6C1C1303AD0013C7DF /* MasterViewController.swift */,
 				0DC06F6E1C1303AD0013C7DF /* DetailViewController.swift */,
+				0D2D185C1C131BC3005B5520 /* ControladorInterfazBusqueda.swift */,
 				0DC06F701C1303AD0013C7DF /* Main.storyboard */,
 				0DC06F731C1303AD0013C7DF /* Assets.xcassets */,
 				0DC06F751C1303AD0013C7DF /* LaunchScreen.storyboard */,
@@ -102,6 +105,7 @@
 				TargetAttributes = {
 					0DC06F631C1303AD0013C7DF = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = ZVWMV4KF63;
 					};
 				};
 			};
@@ -141,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2D185D1C131BC3005B5520 /* ControladorInterfazBusqueda.swift in Sources */,
 				0DC06F681C1303AD0013C7DF /* AppDelegate.swift in Sources */,
 				0DC06F6B1C1303AD0013C7DF /* OpenLibrary.xcdatamodeld in Sources */,
 				0DC06F6D1C1303AD0013C7DF /* MasterViewController.swift in Sources */,
@@ -257,10 +262,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OpenLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.pruebas.com.OpenLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -268,10 +276,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OpenLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.pruebas.com.OpenLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -294,6 +305,7 @@
 				0DC06F7D1C1303AD0013C7DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
