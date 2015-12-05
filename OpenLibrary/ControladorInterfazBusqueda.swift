@@ -11,6 +11,9 @@ import CoreData
 
 class ControladorInterfazBusqueda: UIViewController {
     @IBOutlet weak var inputISBN: UITextField!
+    @IBOutlet weak var imagenPortada: UIImageView!
+    @IBOutlet weak var textoResultado: UITextView!
+    
     let direccionServicio = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:"
     var entidad : NSEntityDescription?
     var contexto : NSManagedObjectContext?
@@ -84,6 +87,34 @@ class ControladorInterfazBusqueda: UIViewController {
                 
                 
                 
+
+                    var resultadoAImprimir = ""
+                    
+                    
+                    //Impresión ISBN
+                    resultadoAImprimir += "ISBN: \(ISBN)\n"
+                    
+                    //Impresión título
+                    resultadoAImprimir += "Título: \(tituloString)\n"
+                    
+                    //Impresión autores
+                    resultadoAImprimir += "Autores: \(autores)\n"
+                    
+                    //Muestra de los resultados
+                    if let labelResultado = textoResultado{
+                        labelResultado.text = resultadoAImprimir
+                    }
+                    
+                    if self.imagenPortada != nil {
+                        self.imagenPortada.image = nil
+                        if direccionPortada != "" {
+                            cargarImagen(direccionPortada)
+                        }
+                    }
+                    
+                    
+                    
+
                 
                 
                 
@@ -106,7 +137,7 @@ class ControladorInterfazBusqueda: UIViewController {
                     abort()
                 }
                 
-                self.navigationController!.popToRootViewControllerAnimated(true)
+                
                 
             }else if diccionarioPadre.allValues.count == 0{
                 //Presentar alerta
@@ -119,12 +150,43 @@ class ControladorInterfazBusqueda: UIViewController {
             
             
             
+            
+            
+            
+            
+            
+            
+            
         }catch let e{
             print("Hubo un problema al parse el JSON error: \(e)" )
         }
     }
     
     
+    func cargarImagen(urlString:String)
+    {
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request){
+            (data, response, error) -> Void in
+            
+            if (error == nil && data != nil)
+            {
+                func display_image()
+                {
+                    self.imagenPortada.image = UIImage(data: data!)
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), display_image)
+            }
+            
+        }
+        
+        task.resume()
+    }
+
     
     
     
